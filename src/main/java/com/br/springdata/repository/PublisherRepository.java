@@ -8,4 +8,6 @@ import java.util.UUID;
 
 @Repository
 public interface PublisherRepository extends JpaRepository<PublisherModel, UUID> {
+
+    boolean existsByNameContainingIgnoreCase(String name);
 }
