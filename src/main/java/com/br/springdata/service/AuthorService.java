@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -24,6 +25,10 @@ public class AuthorService {
         authorRepository.save(author);
 
         return author;
+    }
+
+    public List<AuthorModel> getAllAuthors() {
+        return authorRepository.findAll();
     }
 
     public AuthorModel findAuthorById(UUID id) {
