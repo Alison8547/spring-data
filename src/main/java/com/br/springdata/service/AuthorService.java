@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Service
@@ -29,6 +30,11 @@ public class AuthorService {
 
     public List<AuthorModel> getAllAuthors() {
         return authorRepository.findAll();
+    }
+
+    public List<AuthorModel> getAllAuthorsById(Set<UUID> ids) {
+        return authorRepository.findAllById(ids);
+
     }
 
     public AuthorModel findAuthorById(UUID id) {
